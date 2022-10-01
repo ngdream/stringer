@@ -1,8 +1,6 @@
 
 import tkinter as tk
 from tkinter import END, TOP, ttk
-
-
 class Window(tk.Tk):
     
     def __init__(self,*args, **kwargs):
@@ -22,10 +20,11 @@ class Window(tk.Tk):
         self.convert.pack(pady=10,side=TOP,fill="x")
         self.style=ttk.Style(self)
         self.style.theme_use("default")
+        
 
-
-        self.itext=tk.Text(self)
+        self.itext=tk.Text(self,font=)
         self.itext.pack(padx=10,expand=True,fill="y",side=tk.LEFT)
+        
 
         self.otext=tk.Text(self)
         self.otext.pack(padx=10,expand=True,fill="y",side=tk.LEFT)
