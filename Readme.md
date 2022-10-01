@@ -15,4 +15,6 @@ just launch main.py
 - select an option (optionnal)
 - click on `convert`
 
+**any contribution is welcome :fire:**
+
 
