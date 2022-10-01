@@ -4,7 +4,7 @@ stringer is a sample python program  that helps developers to convert a text in 
 
 # preview 
 
-![](preview/preview.png)
+![](https://github.com/ngdream/stringer/blob/fe4f9776959b868e4d4781a50c1733317418ffe3/Preview/preview.png)
 
 # how to use
 
