@@ -4,7 +4,7 @@ from tkinter import END, TOP, ttk
 class Window(tk.Tk):
     
     def __init__(self,*args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+        super().__init__(self, *args, **kwargs)
         self.button_box=tk.Frame(self)
         self.button_box.pack(padx=10,side=tk.LEFT,expand=True,fill="y")
         self.is_multiline=tk.IntVar()
@@ -16,13 +16,13 @@ class Window(tk.Tk):
         self.multiline=tk.Checkbutton(self.button_box,variable=self.is_multiline,onvalue=1,offvalue=0,text="multiline")
         self.multiline.pack(padx=10)
 
-        self.convert=tk.Button(self.button_box,text="convert",command=self.stringify)
+        self.convert=ttk.Button(self.button_box,text="convert",command=self.stringify)
         self.convert.pack(pady=10,side=TOP,fill="x")
         self.style=ttk.Style(self)
-        self.style.theme_use("default")
-        
+        self.style.theme_use("xpnative")
 
-        self.itext=tk.Text(self,font=)
+
+        self.itext=tk.Text(self)
         self.itext.pack(padx=10,expand=True,fill="y",side=tk.LEFT)
         
 
