@@ -4,7 +4,7 @@ from tkinter import END, TOP, ttk
 class Window(tk.Tk):
     
     def __init__(self,*args, **kwargs):
-        super().__init__(self, *args, **kwargs)
+        tk.Tk.__init__(self, *args, **kwargs)
         self.button_box=tk.Frame(self)
         self.button_box.pack(padx=10,side=tk.LEFT,expand=True,fill="y")
         self.is_multiline=tk.IntVar()
