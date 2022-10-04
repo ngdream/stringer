@@ -9,7 +9,7 @@ class Window(tk.Tk):
         self.button_box.pack(padx=10,side=tk.LEFT,expand=True,fill="y")
         self.is_multiline=tk.IntVar()
 
-        languages=['c++','python']
+        languages=['c++','python', "java"]
         self.language=ttk.Combobox(self.button_box,values=languages)
         self.language.pack(pady=10)
         self.language.set("c++")
@@ -19,7 +19,7 @@ class Window(tk.Tk):
         self.convert=ttk.Button(self.button_box,text="convert",command=self.stringify)
         self.convert.pack(pady=10,side=TOP,fill="x")
         self.style=ttk.Style(self)
-        self.style.theme_use("xpnative")
+        #self.style.theme_use("xpnative")
 
 
         self.itext=tk.Text(self)
@@ -69,6 +69,22 @@ class Window(tk.Tk):
                     else:
                         out+=c
                 out+='"'
+        elif lang=="java":
+            out='"'
+            for c in  i :
+                if(c == '"'):
+                    out+='\\\"'
+                elif(c=='\n'):
+                    out +='\\n'
+                    if(self.is_multiline.get()==1):
+                        out+='"\n"'
+                elif(c=='\t'):
+                    out+='\\t'
+                elif(c=='\\'):
+                    out+='\\\\'
+                else:
+                    out+=c
+            out+='"' 
 
         
 
