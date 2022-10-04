@@ -19,7 +19,7 @@ class Window(tk.Tk):
         self.convert=ttk.Button(self.button_box,text="convert",command=self.stringify)
         self.convert.pack(pady=10,side=TOP,fill="x")
         self.style=ttk.Style(self)
-        #self.style.theme_use("xpnative")
+        self.style.theme_use("xpnative")
 
 
         self.itext=tk.Text(self)
