@@ -9,7 +9,7 @@ class Window(tk.Tk):
         self.button_box.pack(padx=10,side=tk.LEFT,expand=True,fill="y")
         self.is_multiline=tk.IntVar()
 
-        languages=['c++','python', "java"]
+        languages=['c++','python', "java"]#available programming languages
         self.language=ttk.Combobox(self.button_box,values=languages)
         self.language.pack(pady=10)
         self.language.set("c++")
@@ -31,7 +31,7 @@ class Window(tk.Tk):
         self.otext.config(state=tk.DISABLED)
 
         
-
+    #convert function
     def stringify(self):
         i =self.itext.get("1.0",END)[0:-1]
         lang=self.language.get()
