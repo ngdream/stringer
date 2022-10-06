@@ -15,6 +15,14 @@ just launch main.py
 - select an option (optionnal)
 - click on `convert`
 
+**available language**
+- c++
+- python
+- java
+
+
+
+
 **any contribution is welcome :fire:**
 
 
