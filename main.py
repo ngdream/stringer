@@ -1,8 +1,19 @@
 
-import tkinter as tk
+import platform, tkinter as tk
 from tkinter import END, TOP, ttk
+
+
+#Set OS ttk theme data
+if platform.system() == "Linux":
+    OS_THEME = "classic"
+elif platform.system() == "Darwin":
+    OS_THEME = "aqua"
+else:
+    OS_THEME = "xpnative"
+
+
 class Window(tk.Tk):
-    
+
     def __init__(self,*args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         self.button_box=tk.Frame(self)
@@ -19,18 +30,18 @@ class Window(tk.Tk):
         self.convert=ttk.Button(self.button_box,text="convert",command=self.stringify)
         self.convert.pack(pady=10,side=TOP,fill="x")
         self.style=ttk.Style(self)
-        self.style.theme_use("xpnative")
+        self.style.theme_use(OS_THEME)
 
 
         self.itext=tk.Text(self)
         self.itext.pack(padx=10,expand=True,fill="y",side=tk.LEFT)
-        
+
 
         self.otext=tk.Text(self)
         self.otext.pack(padx=10,expand=True,fill="y",side=tk.LEFT)
         self.otext.config(state=tk.DISABLED)
 
-        
+
     #convert function
     def stringify(self):
         i =self.itext.get("1.0",END)[0:-1]
@@ -84,9 +95,9 @@ class Window(tk.Tk):
                     out+='\\\\'
                 else:
                     out+=c
-            out+='"' 
+            out+='"'
 
-        
+
 
         self.otext.config(state=tk.NORMAL)
         self.otext.delete('1.0',END)
